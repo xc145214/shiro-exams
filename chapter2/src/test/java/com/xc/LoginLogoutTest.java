@@ -15,7 +15,7 @@ import org.junit.Test;
 /**
  * Created by Administrator on 2015/11/10.
  */
-public class LoginLogouTest {
+public class LoginLogoutTest {
 
     @Test
     public void testHelloWorld() {
