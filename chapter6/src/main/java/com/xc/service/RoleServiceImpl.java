@@ -12,10 +12,12 @@ public class RoleServiceImpl implements RoleService {
     private RoleDao roleDao = new RoleDaoImpl();
 
 
+    @Override
     public Role createRole(Role role) {
         return roleDao.createRole(role);
     }
 
+    @Override
     public void deleteRole(Long roleId) {
         roleDao.deleteRole(roleId);
     }
@@ -25,6 +27,7 @@ public class RoleServiceImpl implements RoleService {
      * @param roleId
      * @param permissionIds
      */
+    @Override
     public void correlationPermissions(Long roleId, Long... permissionIds) {
         roleDao.correlationPermissions(roleId, permissionIds);
     }
@@ -34,6 +37,7 @@ public class RoleServiceImpl implements RoleService {
      * @param roleId
      * @param permissionIds
      */
+    @Override
     public void uncorrelationPermissions(Long roleId, Long... permissionIds) {
         roleDao.uncorrelationPermissions(roleId, permissionIds);
     }

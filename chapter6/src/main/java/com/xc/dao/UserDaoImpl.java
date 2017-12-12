@@ -21,6 +21,7 @@ public class UserDaoImpl implements UserDao {
 
     private JdbcTemplate jdbcTemplate = JdbcTemplateUtils.jdbcTemplate();
 
+    @Override
     public User createUser(final User user) {
         final String sql = "insert into sys_users(username, password, salt, locked) values(?,?,?, ?)";
 
@@ -41,11 +42,13 @@ public class UserDaoImpl implements UserDao {
         return user;
     }
 
+    @Override
     public void updateUser(User user) {
         String sql = "update sys_users set username=?, password=?, salt=?, locked=? where id=?";
         jdbcTemplate.update(sql, user.getUsername(), user.getPassword(), user.getSalt(), user.getLocked(), user.getId());
     }
 
+    @Override
     public void deleteUser(Long userId) {
         String sql = "delete from sys_users where id=?";
         jdbcTemplate.update(sql, userId);
